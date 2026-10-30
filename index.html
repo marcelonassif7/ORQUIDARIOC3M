@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orquidário Flor de Seda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F6F2F7; --surface:#FFFFFF; --ink:#23301F; --muted:#5E6A5A;
+  --forest:#1D3629; --forest-ink:#EEF3EC; --orchid:#B02F78; --leaf:#7FA37A; --line:#E0D8E3;
+  --serif:'Fraunces',Georgia,serif; --sans:'Figtree',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){color-scheme:dark;--bg:#141C16;--surface:#1D2820;--ink:#E8EEE5;--muted:#A5B3A0;--forest:#0F1A13;--orchid:#E070AB;--line:#2E3B30}
+}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#141C16;--surface:#1D2820;--ink:#E8EEE5;--muted:#A5B3A0;--forest:#0F1A13;--orchid:#E070AB;--line:#2E3B30}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orchid);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--forest);color:var(--forest-ink)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font-family:var(--serif);font-size:20px;text-decoration:none}
+nav a{margin-left:20px;text-decoration:none;font-size:15px;opacity:.85}
+nav a:hover{opacity:1;text-decoration:underline}
+.hero{background:var(--forest);color:var(--forest-ink);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding-top:56px;padding-bottom:64px}
+.hero h1{font-size:clamp(38px,6vw,68px);max-width:12ch}
+.hero p{max-width:44ch;opacity:.88;margin:20px 0 28px}
+.btn{display:inline-block;background:var(--orchid);color:#fff;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;margin-left:10px;color:var(--forest-ink)}
+.hero svg{width:100%;height:auto;max-height:440px}
+section{padding:72px 0}
+section h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 30px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font:inherit;font-size:15px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .art{aspect-ratio:4/3;display:grid;place-items:center}
+.card .body{padding:16px 18px 20px}
+.card h3{font-size:21px}
+.card .sci{font-style:italic;color:var(--muted);font-size:14px;margin:2px 0 8px}
+.card p{margin:0;font-size:15px}
+.price{margin-top:12px;font-weight:600;color:var(--orchid)}
+.care{background:var(--surface);border-block:1px solid var(--line)}
+.care-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px}
+.care-grid h3{font-size:22px;margin-bottom:6px}
+.care-grid p{margin:0;color:var(--muted)}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.visit dl{margin:0}
+.visit dt{font-weight:600;margin-top:16px}
+.visit dd{margin:2px 0 0;color:var(--muted)}
+footer{background:var(--forest);color:var(--forest-ink);padding:26px 0;font-size:14px;opacity:.95}
+@media (max-width:760px){
+  .hero .wrap,.visit{grid-template-columns:1fr}
+  .hero svg{max-height:300px}
+  nav a:not(:last-child){display:none}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#inicio">Flor de Seda</a>
+  <nav aria-label="Principal"><a href="#colecao">Coleção</a><a href="#cuidados">Cuidados</a><a href="#visite">Visite</a></nav>
+</div></header>
+
+<main id="inicio">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Orquídeas cultivadas com paciência</h1>
+    <p>Plantas saudáveis, já aclimatadas e prontas para florescer na sua casa. Venha escolher a sua pessoalmente ou peça pelo WhatsApp.</p>
+    <a class="btn" href="#colecao">Ver coleção</a><a class="btn ghost" href="#visite">Como chegar</a>
+  </div>
+  <svg viewBox="0 0 400 440" role="img" aria-label="Ilustração de uma orquídea Phalaenopsis em haste curva">
+    <path d="M70 430 C 90 300, 130 200, 250 120 S 340 40, 330 20" fill="none" stroke="#7FA37A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M85 400 C 20 380, 10 330, 40 300 C 70 330, 90 360, 85 400Z" fill="#4F7A5A"/>
+    <path d="M85 410 C 140 400, 180 440, 230 430 C 200 380, 130 370, 85 410Z" fill="#3D6549"/>
+    <g id="fl"></g>
+  </svg>
+</div></div>
+
+<section id="colecao"><div class="wrap">
+  <h2>Nossa coleção</h2>
+  <p class="lead">Mudas e plantas adultas. Os valores e a disponibilidade mudam conforme a floração; confirme pelo WhatsApp.</p>
+  <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</div></section>
+
+<section id="cuidados" class="care"><div class="wrap">
+  <h2>Cuidados básicos</h2>
+  <p class="lead">Três regras que evitam a maioria dos problemas.</p>
+  <div class="care-grid">
+    <div><h3>Luz</h3><p>Claridade forte, sem sol direto ao meio-dia. Folhas verde-claras indicam luz certa; verde muito escuro pede mais claridade.</p></div>
+    <div><h3>Rega</h3><p>Regue quando o substrato estiver seco, em geral uma ou duas vezes por semana. Nunca deixe água parada no vaso ou no cachepô.</p></div>
+    <div><h3>Adubo</h3><p>Use adubo próprio para orquídeas, diluído, a cada 15 dias na época de crescimento. Reduza depois da floração.</p></div>
+  </div>
+</div></section>
+
+<section id="visite"><div class="wrap visit">
+  <div>
+    <h2>Visite o orquidário</h2>
+    <p class="lead">Atendimento com hora marcada, para você escolher com calma e tirar dúvidas.</p>
+    <a class="btn" id="wpp" href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Vi%20o%20site%20do%20orquid%C3%A1rio%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+  <dl>
+    <dt>Endereço</dt><dd>Rua das Orquídeas, 123 – Bairro, Cidade/RJ</dd>
+    <dt>Horário</dt><dd>Sábados e domingos, 9h às 16h (outros dias com agendamento)</dd>
+    <dt>Telefone</dt><dd>(21) 99999-9999</dd>
+    <dt>Instagram</dt><dd>@florDeSedaOrquidario</dd>
+  </dl>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Orquidário Flor de Seda. Todos os direitos reservados.</div></footer>
+
+<script>
+const plants=[
+ {n:'Phalaenopsis',s:'Orquídea-borboleta',t:'Phalaenopsis',c:'#F4E6F0',a:'#B02F78',d:'A mais fácil para começar. Flores duram meses.',p:'a partir de R$ 60'},
+ {n:'Cattleya labiata',s:'Cattleya',t:'Cattleya',c:'#EAD9F2',a:'#8B3FB8',d:'Flores grandes e perfumadas, muito procuradas por colecionadores.',p:'a partir de R$ 90'},
+ {n:'Dendrobium nobile',s:'Dendrobium',t:'Dendrobium',c:'#FBE3E8',a:'#D9456F',d:'Floresce em hastes cheias de flores no fim do inverno.',p:'a partir de R$ 50'},
+ {n:'Oncidium',s:'Chuva-de-ouro',t:'Oncidium',c:'#FFF1C2',a:'#E0A800',d:'Cachos de flores amarelas, ótimas para varanda iluminada.',p:'a partir de R$ 55'},
+ {n:'Vanda',s:'Vanda coerulea',t:'Vanda',c:'#DCE6FA',a:'#4A62C9',d:'Raízes aéreas e flores azuladas. Pede luz forte e umidade.',p:'a partir de R$ 120'},
+ {n:'Miltonia',s:'Orquídea-pensamento',t:'Miltonia',c:'#F6DDE6',a:'#A23A62',d:'Flores achatadas com desenho de rosto, parecidas com um amor-perfeito.',p:'a partir de R$ 70'}
+];
+function flower(color,size,cx,cy,rot){
+  let g='';
+  for(let i=0;i<5;i++){g+=`<ellipse cx="0" cy="-${size*.5}" rx="${size*.32}" ry="${size*.5}" transform="rotate(${i*72})" fill="${color}" opacity=".94"/>`}
+  return `<g transform="translate(${cx} ${cy}) rotate(${rot||0})">${g}<circle r="${size*.14}" fill="#FFE9A8"/><circle r="${size*.06}" fill="#B02F78"/></g>`;
+}
+document.getElementById('fl').innerHTML=
+  flower('#F6E3EF',46,250,120,10)+flower('#F0CFE3',40,170,175,-12)+flower('#F6E3EF',34,320,50,20)+flower('#EBC0D8',28,115,250,5);
+const types=['Todas',...new Set(plants.map(p=>p.t))];
+const chips=document.getElementById('chips'),grid=document.getElementById('grid');
+let cur='Todas';
+function draw(){
+  chips.innerHTML=types.map(t=>`<button class="chip" aria-pressed="${t===cur}" data-t="${t}">${t}</button>`).join('');
+  grid.innerHTML=plants.filter(p=>cur==='Todas'||p.t===cur).map(p=>`
+    <article class="card"><div class="art" style="background:${p.c}">
+      <svg viewBox="-60 -60 120 120" width="120" height="120" aria-hidden="true">${flower(p.a,46,0,0,0)}</svg></div>
+      <div class="body"><h3>${p.n}</h3><div class="sci">${p.s}</div><p>${p.d}</p><div class="price">${p.p}</div></div></article>`).join('');
+}
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b){cur=b.dataset.t;draw();chips.querySelector('[aria-pressed="true"]').focus()}});
+draw();
+</script>
+</body>
+</html>
