@@ -1,5 +1,5 @@
 /* ===== CONFIGURAÇÃO: edite estes valores ===== */
-const SCRIPT_URL=https://script.google.com/macros/s/AKfycbyIiyDxcYMFY3lu6GHJpFZUpqIXb4bzQ6zWB1WG8ObuIqghRX3tBVYPwOjQDYy6KVzVEA/exec; // URL gerada ao publicar o Apps Script
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyIiyDxcYMFY3lu6GHJpFZUpqIXb4bzQ6zWB1WG8ObuIqghRX3tBVYPwOjQDYy6KVzVEA/exec'; // URL gerada ao publicar o Apps Script
 const WHATSAPP='5531999176791';                    // recebe os pedidos: DDI+DDD+número, só dígitos
 const FRETE_FIXO=25, FRETE_GRATIS_ACIMA=199;       // mesmos valores do Code.gs
 /* ============================================= */
