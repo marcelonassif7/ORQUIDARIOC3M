@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orquidário C3M | Todo mundo pode colecionar orquídeas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="text-center text-sm font-semibold py-2 px-3" style="background:var(--plum);color:var(--bg)">Frete grátis nas compras acima de R$ 199 para todo o Brasil</div>
+
+<header class="top">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+    <a href="#inicio" class="display text-xl font-bold no-underline flex items-center gap-2">
+      <span aria-hidden="true">🌸</span> Orquidário C3M
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm font-semibold muted" aria-label="Principal">
+      <a href="#produtos" class="no-underline hover:underline">Orquídeas</a>
+      <a href="#confianca" class="no-underline hover:underline">Por que comprar</a>
+      <a href="#avaliacoes" class="no-underline hover:underline">Avaliações</a>
+      <a href="#contato" class="no-underline hover:underline">Contato</a>
+    </nav>
+    <button class="btn btn-ghost !py-2 !px-4" id="cartBtn" aria-label="Carrinho">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+      <span id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-4 pt-8 pb-12 md:pt-16 md:pb-20 grid md:grid-cols-2 gap-8 items-center">
+    <div class="order-2 md:order-1">
+      <h1 class="display text-4xl sm:text-5xl md:text-6xl font-bold">Todo mundo pode colecionar orquídeas.</h1>
+      <p class="muted text-lg mt-5 max-w-md">Plantas saudáveis, cultivadas com carinho e enviadas já com instruções de cuidado. Comece com uma e, quando perceber, terá uma coleção.</p>
+      <div class="flex flex-col sm:flex-row gap-3 mt-7">
+        <a href="#produtos" class="btn btn-primary text-lg no-underline">Escolher minha orquídea</a>
+        <a href="#confianca" class="btn btn-ghost no-underline">Como enviamos</a>
+      </div>
+      <p class="muted text-sm mt-5">Mais de 2.000 plantas enviadas, com garantia de chegada.</p>
+    </div>
+    <div class="order-1 md:order-2 card p-4 md:p-6" style="background:radial-gradient(circle at 50% 40%,var(--soft),var(--surface) 75%)">
+      <div class="sway" id="heroOrchid" style="aspect-ratio:1/1;max-width:440px;margin:auto"></div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos" class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <div class="flex items-end justify-between gap-4 mb-6">
+      <div>
+        <h2 class="display text-3xl md:text-4xl font-bold">Orquídeas em destaque</h2>
+        <p class="muted mt-2">Fáceis de cuidar, lindas de olhar. Boas para quem está começando e para quem já coleciona.</p>
+      </div>
+    </div>
+    <div id="grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6"></div>
+  </section>
+
+  <!-- CONFIANÇA -->
+  <section id="confianca" class="py-10 md:py-16" style="background:var(--soft)">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="display text-3xl md:text-4xl font-bold mb-8">Compre sem medo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="badges"></div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section id="avaliacoes" class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <div class="flex flex-wrap items-center gap-3 mb-8">
+      <h2 class="display text-3xl md:text-4xl font-bold">Quem comprou, voltou</h2>
+      <span class="font-bold" style="color:var(--star)" aria-label="Nota 4,9 de 5">★ 4,9 <span class="muted font-medium text-sm">em 480 avaliações</span></span>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4" id="reviews"></div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="max-w-6xl mx-auto px-4 pb-14">
+    <div class="rounded-3xl p-8 md:p-12 text-center" style="background:var(--plum);color:var(--bg)">
+      <h2 class="display text-3xl md:text-4xl font-bold" style="color:var(--bg)">Sua primeira orquídea está esperando.</h2>
+      <p class="mt-3 opacity-90 max-w-lg mx-auto">Escolha uma, receba em casa e ganhe o guia de cuidados em português, passo a passo.</p>
+      <a href="#produtos" class="btn btn-primary mt-6 no-underline">Ver orquídeas</a>
+    </div>
+  </section>
+</main>
+
+<footer id="contato" class="foot border-t" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-4 py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <p class="display text-xl font-bold">🌸 Orquidário C3M</p>
+      <p class="muted text-sm mt-2 max-w-xs">Orquídeas cultivadas com cuidado para quem ama flores e para quem sonha com uma coleção.</p>
+    </div>
+    <div>
+      <p class="font-bold mb-3">Loja</p>
+      <ul class="space-y-2 text-sm"><li><a href="#produtos">Orquídeas</a></li><li><a href="#">Kits para iniciantes</a></li><li><a href="#">Vasos e substratos</a></li><li><a href="#">Vale-presente</a></li></ul>
+    </div>
+    <div>
+      <p class="font-bold mb-3">Ajuda</p>
+      <ul class="space-y-2 text-sm"><li><a href="#">Guia de cuidados</a></li><li><a href="#">Prazos e frete</a></li><li><a href="#">Trocas e garantia</a></li><li><a href="#">Perguntas frequentes</a></li></ul>
+    </div>
+    <div>
+      <p class="font-bold mb-3">Fale com a gente</p>
+      <ul class="space-y-2 text-sm"><li><a href="https://wa.me/5531999176791" target="_blank" rel="noopener">WhatsApp: (31) 99917-6791</a></li><li><a href="#">contato@orquidarioc3m.com.br</a></li><li><a href="#">Instagram: @orquidarioc3m</a></li><li class="muted">Seg. a sáb., das 8h às 17h</li></ul>
+    </div>
+  </div>
+  <div class="border-t text-center text-xs muted py-5 px-4" style="border-color:var(--line)">© 2026 Orquidário C3M. Todos os direitos reservados. CNPJ 00.000.000/0001-00</div>
+</footer>
+
+<dialog id="checkout" aria-labelledby="ckTitle">
+  <div class="ck-head"><h2 id="ckTitle" class="display text-2xl font-bold">Seu carrinho</h2><button type="button" id="ckClose" class="ck-x" aria-label="Fechar">✕</button></div>
+  <div class="ck-body">
+    <div id="cartItems"></div>
+    <div id="cartSummary"></div>
+    <form id="orderForm" hidden>
+      <h3 class="font-bold mt-5 mb-1">Seus dados</h3>
+      <label class="field">Nome completo<input name="nome" required autocomplete="name" maxlength="80"></label>
+      <div class="grid grid-cols-2 gap-3">
+        <label class="field">CPF<input name="cpf" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00"></label>
+        <label class="field">WhatsApp com DDD<input name="whatsapp" required inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(31) 90000-0000"></label>
+      </div>
+      <label class="field">E-mail<input name="email" type="email" required autocomplete="email" maxlength="80"></label>
+      <h3 class="font-bold mt-5 mb-1">Endereço de entrega</h3>
+      <label class="field">CEP<input name="cep" required inputmode="numeric" maxlength="9" autocomplete="postal-code" placeholder="00000-000"></label>
+      <label class="field">Rua<input name="rua" required maxlength="80" autocomplete="address-line1"></label>
+      <div class="grid grid-cols-2 gap-3">
+        <label class="field">Número<input name="numero" required maxlength="10"></label>
+        <label class="field">Complemento<input name="complemento" maxlength="40" placeholder="Apto, bloco..."></label>
+      </div>
+      <label class="field">Bairro<input name="bairro" maxlength="60"></label>
+      <div class="grid grid-cols-3 gap-3">
+        <label class="field" style="grid-column:span 2">Cidade<input name="cidade" required maxlength="60" autocomplete="address-level2"></label>
+        <label class="field">Estado<select name="uf" required></select></label>
+      </div>
+      <label class="field">Forma de pagamento<select name="pagamento"><option>Pix</option><option>Cartão de crédito</option><option>Boleto</option></select></label>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <p class="muted text-xs mt-2">Ao finalizar, abrimos o WhatsApp com o resumo do pedido para você enviar. Usamos seus dados só para processar e entregar a compra, conforme a LGPD.</p>
+      <button class="btn btn-primary w-full mt-4" id="ckSubmit" type="submit">Finalizar compra</button>
+      <p id="ckError" class="text-sm mt-3" style="color:#C0392B" hidden></p>
+    </form>
+    <div id="ckDone" hidden></div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
