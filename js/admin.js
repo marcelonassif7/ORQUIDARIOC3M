@@ -1,5 +1,5 @@
 /* Usa a mesma URL do Apps Script do site (js/main.js) */
-const SCRIPT_URL=(document.currentScript&&document.currentScript.dataset.url)||https://script.google.com/macros/s/AKfycbyIiyDxcYMFY3lu6GHJpFZUpqIXb4bzQ6zWB1WG8ObuIqghRX3tBVYPwOjQDYy6KVzVEA/exec; // <<< cole a mesma URL de main.js
+const SCRIPT_URL=(document.currentScript&&document.currentScript.dataset.url)||'https://script.google.com/macros/s/AKfycbyIiyDxcYMFY3lu6GHJpFZUpqIXb4bzQ6zWB1WG8ObuIqghRX3tBVYPwOjQDYy6KVzVEA/exec'; // <<< cole a mesma URL de main.js
 const $=id=>document.getElementById(id);
 const BRL=v=>Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
