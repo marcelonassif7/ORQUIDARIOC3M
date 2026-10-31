@@ -1,6 +1,6 @@
 /* Orquidário C3M: estilo da loja (inspirado em lojas de orquídeas: topo, busca, menu de categorias, vitrine em grade) */
 :root{
-  --bg:#F6F3F8;--surface:#FFFFFF;--soft:#EFE7F5;--ink:#241B2E;--muted:#6A5F73;--line:#E3DAEA;
+  --bg:#F6F3F8;--surface:#FFFFFF;--soft:#EFE7F5;--ink:#E6DFC8;--muted:#6A5F73;--line:#E3DAEA;
   --brand:#4F2A78;--plum:#4F2A78;--orchid:#B2328C;--orchid-ink:#FFFFFF;--buy:#2E7D4F;--buy-ink:#FFFFFF;--leaf:#2E7D4F;--leaf-soft:#E0F1E7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   color-scheme:dark;--bg:#150E1C;--surface:#21152B;--soft:#2D1D3A;--ink:#F4EDF8;--muted:#B9A9C4;--line:#432C55;
