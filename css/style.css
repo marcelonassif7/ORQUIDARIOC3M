@@ -28,7 +28,7 @@ a{color:inherit}
 .no-underline{text-decoration:none}
 /* topo */
 .topbar{background:var(--brand);color:#fff;font-size:.8rem}.topbar .wrap{min-height:36px}.topbar a{color:#fff;text-decoration:none;opacity:.92}.topbar a:hover{opacity:1;text-decoration:underline}
-header.top{background:var(--surface);border-bottom:1px solid var(--line)}
+header.top{background:#CFAFF0;border-bottom:1px solid var(--line)}
 @media (min-width:768px){header.top{position:sticky;top:0;z-index:40}}
 .hdr-main{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;padding-top:.75rem;padding-bottom:.75rem}
 .logo{text-decoration:none;display:inline-block}.logo img{display:block}
