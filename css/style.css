@@ -3,7 +3,7 @@
   --bg:#F6F3F8;--surface:#FFFFFF;--soft:#EFE7F5;--ink:#E6DFC8;--muted:#6A5F73;--line:#E3DAEA;
   --brand:#4F2A78;--plum:#4F2A78;--orchid:#B2328C;--orchid-ink:#FFFFFF;--buy:#2E7D4F;--buy-ink:#FFFFFF;--leaf:#2E7D4F;--leaf-soft:#E0F1E7}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;--bg:#150E1C;--surface:#21152B;--soft:#2D1D3A;--ink:#F4EDF8;--muted:#B9A9C4;--line:#432C55;
+  color-scheme:dark;--bg:#E6DFC8;--surface:#21152B;--soft:#2D1D3A;--ink:#F4EDF8;--muted:#B9A9C4;--line:#432C55;
   --brand:#3A1F5A;--plum:#D9BDF5;--orchid:#E465BE;--orchid-ink:#2B0A20;--buy:#4FB37A;--buy-ink:#0B2415;--leaf:#7ED1A3;--leaf-soft:#173325}}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
