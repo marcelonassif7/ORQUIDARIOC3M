@@ -1,7 +1,7 @@
 $('bArt').innerHTML=orchid('#F08CC1','#F7B8DA','#C0328A');
 $('grid').innerHTML=skel(8);
 initApp(()=>{
-  $('benefits').innerHTML=[['💳',`Até ${LOJA.parcelas}x sem juros`,'Parcele suas orquídeas'],['📲','Atendimento no WhatsApp',LOJA.telefone],['📍','Visite o orquidário',LOJA.cidade.replace('/',', ')],['🌿','Matrizes selecionadas','Grande variedade de espécies']]
+  $('benefits').innerHTML=[['💳',`Pague como quiser !`,'Aceitamos diversas formas de pagamento'],['📲','Atendimento no WhatsApp',LOJA.telefone],['📍','Visite o orquidário',LOJA.cidade.replace('/',', ')],['🌿','Matrizes selecionadas','Grande variedade de espécies']]
     .map(b=>`<li><span aria-hidden="true">${b[0]}</span><div><strong>${esc(b[1])}</strong><small>${esc(b[2])}</small></div></li>`).join('');
   const c={};Object.entries(CAT.config||{}).forEach(([k,v])=>{if(v)c[k]=v});
   if(c.titulo)$('bTitulo').textContent=c.titulo;
