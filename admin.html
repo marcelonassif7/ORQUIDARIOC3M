@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Painel | Orquidário C3M</title>
+<link rel="icon" href="img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="adm-top"><div class="wrap"><h1>Painel · Orquidário C3M</h1><div class="flex items-center gap-3"><a href="index.html" target="_blank" rel="noopener" class="text-sm no-underline">Ver loja</a><button id="sair" class="text-sm" type="button" hidden style="background:none;border:0;cursor:pointer;font:inherit">Sair</button></div></div></div>
+<div class="wrap" style="padding-bottom:3rem">
+  <section id="login" class="card pad mt-6 max-w-sm">
+    <form id="loginForm">
+      <label class="field" style="margin-top:0">Senha do painel<input type="password" id="senha" required autocomplete="current-password"></label>
+      <button class="btn btn-primary w-full mt-4" type="submit">Entrar</button>
+      <p id="loginErr" class="text-sm mt-3" style="color:var(--danger)" hidden></p>
+    </form>
+  </section>
+
+  <section id="painel" hidden>
+    <div class="tabs" role="tablist">
+      <button data-tab="resumo" aria-selected="true">Resumo</button><button data-tab="pedidos" aria-selected="false">Pedidos</button><button data-tab="produtos" aria-selected="false">Produtos</button><button data-tab="banner" aria-selected="false">Banner</button><button data-tab="loja" aria-selected="false">Loja</button>
+    </div>
+
+    <div id="tab-resumo">
+      <div class="kpis" id="kpis"></div>
+      <div class="grid md:grid-cols-2 gap-4 mt-6">
+        <div class="card pad"><h2 class="display text-xl">Últimos pedidos</h2><div id="ultimos" class="mt-2"></div></div>
+        <div class="card pad"><h2 class="display text-xl">Estoque baixo</h2><div id="baixo" class="mt-2"></div></div>
+      </div>
+    </div>
+
+    <div id="tab-pedidos" hidden>
+      <div class="toolbar mt-5"><label class="sortlbl">Mostrar <select id="fPed"><option value="todos">Todos</option><option value="pend">Aguardando pagamento</option><option value="enviar">Pagos, a enviar</option><option value="pago">Pagos</option><option value="cancel">Cancelados</option></select></label>
+        <button id="csv" class="btn btn-ghost !py-2" type="button">Exportar CSV (Excel)</button></div>
+      <div id="listaPed"></div>
+    </div>
+
+    <div id="tab-produtos" hidden>
+      <div class="toolbar mt-5"><p class="muted" id="resumoProd"></p><button id="novo" class="btn btn-primary" type="button">+ Novo produto</button></div>
+      <div id="lista" class="grid gap-3"></div>
+    </div>
+
+    <div id="tab-banner" hidden>
+      <form id="bForm" class="card pad mt-5">
+        <p class="muted text-sm">Banner grande no topo da página inicial. Sem imagem, aparece o fundo roxo padrão.</p>
+        <label class="field">Título<input name="titulo" maxlength="120"></label>
+        <label class="field">Texto de apoio<input name="subtitulo" maxlength="200"></label>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="field">Texto do botão<input name="botaoTexto" maxlength="40"></label>
+          <label class="field">Link do botão<input name="botaoLink" maxlength="200" placeholder="categoria.html"></label>
+        </div>
+        <label class="field">Imagem para computador (ideal 1920×800)<input type="file" id="bFile" accept="image/*"></label>
+        <div id="bPrev" class="mt-2"></div>
+        <label class="field">Imagem para celular (opcional, ideal 900×1200)<input type="file" id="bFileM" accept="image/*"></label>
+        <div id="bPrevM" class="mt-2"></div>
+        <button class="btn btn-primary mt-5" id="bSalvar" type="submit">Salvar banner</button>
+        <p id="bErr" class="text-sm mt-3" style="color:var(--danger)" hidden></p>
+      </form>
+    </div>
+
+    <div id="tab-loja" hidden>
+      <form id="cForm" class="card pad mt-5">
+        <p class="muted text-sm">Dados que aparecem no site (rodapé, contato, mapa) e regras de venda. Campos vazios usam o valor padrão.</p>
+        <label class="field">Aviso no topo do site (opcional)<input name="avisoTopo" maxlength="120" placeholder="Ex.: Frete grátis em compras acima de R$ 199"></label>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="field">WhatsApp que recebe os pedidos (com DDD)<input name="whatsapp" maxlength="20" placeholder="(31) 99917-6791"></label>
+          <label class="field">Telefone exibido<input name="telefone" maxlength="30"></label>
+        </div>
+        <label class="field">E-mail de contato<input name="email" type="email" maxlength="80"></label>
+        <label class="field">Endereço<input name="endereco" maxlength="120"></label>
+        <div class="grid grid-cols-3 gap-3">
+          <label class="field" style="grid-column:span 2">Cidade/UF<input name="cidade" maxlength="60"></label>
+          <label class="field">CEP<input name="cep" maxlength="9"></label>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="field">Horário (linha 1)<input name="horario1" maxlength="60" placeholder="Segunda a sexta: 9h às 19h"></label>
+          <label class="field">Horário (linha 2)<input name="horario2" maxlength="60" placeholder="Sábado: 9h às 14h"></label>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="field">Facebook (link)<input name="facebook" maxlength="200" placeholder="https://..."></label>
+          <label class="field">Instagram (link)<input name="instagram" maxlength="200" placeholder="https://..."></label>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          <label class="field">Parcelas sem juros<input name="parcelas" type="number" min="1" max="12" step="1"></label>
+          <label class="field">Frete (R$)<input name="frete_fixo" type="number" min="0" step="0.01"></label>
+          <label class="field">Frete grátis acima de (R$)<input name="frete_gratis_acima" type="number" min="0" step="0.01"></label>
+        </div>
+        <label class="field">E-mail para aviso de novo pedido (opcional, só você vê)<input name="emailAviso" type="email" maxlength="80"></label>
+        <button class="btn btn-primary mt-5" id="cSalvar" type="submit">Salvar configurações</button>
+        <p id="cErr" class="text-sm mt-3" style="color:var(--danger)" hidden></p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<dialog id="prod" aria-labelledby="pTitle">
+  <div class="ck-head"><h2 id="pTitle" class="display text-2xl font-bold">Produto</h2><button type="button" id="pClose" class="ck-x" aria-label="Fechar">✕</button></div>
+  <form id="pForm" class="ck-body">
+    <label class="field" style="margin-top:0">Nome<input name="nome" required maxlength="60"></label>
+    <label class="field">Espécie (cria o menu automaticamente)<input name="esp" list="espList" maxlength="40" placeholder="Ex.: Cattleya Walkeriana"></label>
+    <datalist id="espList"></datalist>
+    <div class="grid grid-cols-3 gap-3">
+      <label class="field">Preço (R$)<input name="preco" type="number" step="0.01" min="0.01" required inputmode="decimal"></label>
+      <label class="field">Promoção (R$)<input name="promo" type="number" step="0.01" min="0" inputmode="decimal" placeholder="opcional"></label>
+      <label class="field">Custo (R$)<input name="custo" type="number" step="0.01" min="0" inputmode="decimal"></label>
+    </div>
+    <label class="field">Estoque total<input name="estoque" type="number" min="0" step="1" required inputmode="numeric"></label>
+    <p class="muted text-xs mt-1">Estoque total = tudo que já entrou, inclusive o que já foi vendido. Para repor, some a quantidade nova.</p>
+    <label class="field">Descrição curta (aparece nos cartões)<input name="descricao" maxlength="120"></label>
+    <label class="field">Descrição completa (página do produto)<textarea name="descricaoLonga" rows="5" maxlength="1500"></textarea></label>
+    <label class="field">Etiqueta (opcional)<input name="etiqueta" maxlength="25" placeholder="Ex.: Lançamento"></label>
+    <label class="field">Ilustração, se não houver foto
+      <select name="estilo"><option value="branca">Branca</option><option value="rosa">Rosa</option><option value="pintada">Pintada</option><option value="roxa">Roxa</option><option value="amarela">Amarela</option></select></label>
+    <p class="field">Fotos (a primeira é a capa; até 8)</p>
+    <div id="fotosBox" class="mt-1"></div>
+    <label class="field">Enviar fotos<input type="file" id="arquivo" accept="image/*" multiple></label>
+    <div class="flex gap-2 items-end"><label class="field flex-1">ou endereço (URL) de uma foto<input id="urlFoto" maxlength="500" placeholder="https://..."></label><button class="btn btn-ghost !py-2" id="addUrl" type="button">Adicionar</button></div>
+    <label class="field flex items-center gap-2" style="font-weight:600"><input type="checkbox" name="ativo" checked style="width:auto;min-height:0;margin:0"> Visível no site</label>
+    <button class="btn btn-primary w-full mt-4" id="pSalvar" type="submit">Salvar produto</button>
+    <p id="pErr" class="text-sm mt-3" style="color:var(--danger)" hidden></p>
+  </form>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
